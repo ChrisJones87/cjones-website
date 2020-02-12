@@ -8,3 +8,6 @@
 
 - Favicons
    - https://www.favicon-generator.org/
+
+- Asp.net core
+   - tag helpers
