@@ -10,23 +10,32 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">C JONES</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+           <div class="container">
+              <div>
+                 <a class="navbar-brand d-inline-block" asp-area="" asp-page="/Index">
+                    <img class="profile-image rounded-circle" src="images/profile-cropped-1.jpg"/>
+                 </a>
+                 <div class="d-inline-block align-middle">
+                    <a class="navbar-brand p-0" asp-area="" asp-page="/Index">Christopher Jones</a>
+                    <p class="navbar-brand text-black-50 d-block p-0 m-0">Software Development</p>
+                 </div>
+              </div>
+              
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                      aria-expanded="false" aria-label="Toggle navigation">
+                 <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                 <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                       <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                    </li>
+                    <li class="nav-item">
+                       <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                    </li>
+                 </ul>
+              </div>
+           </div>
         </nav>
     </header>
     <div class="container">
