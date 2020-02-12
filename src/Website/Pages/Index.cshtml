@@ -13,11 +13,21 @@
 <div class="container">
    <div class="row">
       <div class="col">
-         @{ 
+         @{
             var markdownText = "  # Header 1\nTest text\n* point 1\n* point 2\n* point 3";
          }
-         <markdown text="@markdownText">
-          
+         @*<markdown text="@markdownText">
+
+         </markdown>*@
+
+         <markdown>
+            # Header 1
+            Some text to try
+            - Test
+            * test point 2
+            ** whats this do
+              * point 3
+
          </markdown>
       </div>
    </div>

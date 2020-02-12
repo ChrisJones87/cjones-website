@@ -13,13 +13,24 @@ namespace Website.Middleware.Markdown.TagHelpers
    {
       public string Text { get;set;}
 
+      private string GetMarkdownText(TagHelperOutput output)
+      {
+         if (!string.IsNullOrEmpty(Text))
+         {
+            return Text;            
+         }
+         else
+         {
+            return output.Content.GetContent();
+         } 
+      }
+
       public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
       {
+         var markdownText = GetMarkdownText(output);
 
-         var html = Markdig.Markdown.ToHtml(Text);
+         var html = Markdig.Markdown.ToHtml(markdownText ?? "");
 
-        // var content = await output.GetChildContentAsync();
-         
          output.Content.SetHtmlContent(html);
       }
    }
