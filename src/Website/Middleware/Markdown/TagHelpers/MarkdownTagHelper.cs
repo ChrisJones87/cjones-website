@@ -13,7 +13,7 @@ namespace Website.Middleware.Markdown.TagHelpers
    {
       public string Text { get;set;}
 
-      private string GetMarkdownText(TagHelperOutput output)
+      private async Task<string> GetMarkdownTextAsync(TagHelperOutput output)
       {
          if (!string.IsNullOrEmpty(Text))
          {
@@ -21,13 +21,14 @@ namespace Website.Middleware.Markdown.TagHelpers
          }
          else
          {
-            return output.Content.GetContent();
+            var content = await output.GetChildContentAsync();
+            return content.GetContent();
          } 
       }
 
       public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
       {
-         var markdownText = GetMarkdownText(output);
+         var markdownText = await GetMarkdownTextAsync(output);
 
          var html = Markdig.Markdown.ToHtml(markdownText ?? "");
 
