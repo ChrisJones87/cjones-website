@@ -1,0 +1,7 @@
+﻿@page "/Blog/Post/{year:int}/{month:int}/{postName}"
+@model Website.Pages.Blog.PostModel
+@{
+    ViewData["Title"] = @Model.PostTitle;
+}
+
+<markdown text="@Model.PostText"></markdown>
