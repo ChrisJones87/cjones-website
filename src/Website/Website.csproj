@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\posts\2020\02\01-Start_of_Development.md" />
+    <None Include="wwwroot\posts\2020\02\13\01-Start_of_Development.md" />
   </ItemGroup>
 
   <ItemGroup>
