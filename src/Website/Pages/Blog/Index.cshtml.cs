@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Website.Configuration;
 
@@ -26,8 +27,14 @@ namespace Website.Pages.Blog
 
       public List<BlogPostMetadata> BlogPosts => _blogConfiguration.Posts;
 
-      public async Task<IActionResult> OnGetAsync()
+      public List<string> Categories { get; set; }
+      public List<string> Tags { get; set; }
+
+      public async Task<IActionResult> OnGetAsync([FromQuery] string category, [FromQuery] string tag)
       {
+         Categories = BlogPosts.Where(x => !string.IsNullOrWhiteSpace(x.Category)).Select(x => x.Category).Distinct().ToList();
+         Tags = BlogPosts.Where(x => x.Tags != null).SelectMany(x => x.Tags).Distinct().ToList();
+
          return Page();
       }
    }

@@ -2,32 +2,46 @@
 @using Website.Configuration
 @model Website.Pages.Blog.IndexModel
 @{
-    ViewData["Title"] = "Blog";
-
-   string GeneratePostUrl(BlogPostMetadata post)
-   {
-      return $"/blog/post/{post.Path}";
-   }
+   ViewData["Title"] = "Blog";
 }
 
 <div class="container">
    <div class="row">
       <div class="col">
          <h1 class="display-4 mb-4 text-center">Development Blog</h1>
-         <h4 class="text-black-50">
+         <h4 class="text-black-50 text-center">
             Welcome to my personal development blog,
             as you've stumbled upon this place i hope it helps you solve a problem, learn something new or just generally interests you.
          </h4>
       </div>
    </div>
    <div class="row">
-      <div class="col">
+      <div class="col-3 mt-4">
+         <h4 class="text-black-50">Category</h4>
+         <ul class="list-unstyled">
+            @foreach (var category in Model.Categories)
+            {
+               <li>
+                  <a href="/blog?category=@category">@category</a>
+               </li>
+            }
+         </ul>
+
+         <h4 class="text-black-50 mt-4">Tags</h4>
+         <ul class="list-unstyled">
+            @foreach (var tag in Model.Tags)
+            {
+               <li>
+                  <a href="/blog?tag=@tag">@tag</a>
+               </li>
+            }
+         </ul>
+      </div>
+      <div class="col-9">
          @foreach (var post in Model.BlogPosts)
          {
-            var url = GeneratePostUrl(post);
-            
             <article class="mt-4">
-               <h3><a href="@url">@post.Title</a></h3>
+               <h3><a href="@post.PostUrl">@post.Title</a></h3>
                <p>@post.Description</p>
             </article>
          }

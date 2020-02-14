@@ -4,22 +4,30 @@
          {
             "path": "2020/02/13/Start_of_Development",
             "title": "Start of Development",
-            "description": "This is the beginning of my personal website journey"
+            "description": "This is the beginning of my personal website journey",
+            "category": "general",
+            "tags": []  
          },
          {
             "path": "2020/02/13/Start_of_Development",
             "title": "Start of Development",
-            "description": "This is the beginning of my personal website journey"
+            "description": "This is the beginning of my personal website journey",
+            "category": "general",
+            "tags": []
          },
          {
             "path": "2020/02/13/Start_of_Development",
             "title": "Start of Development",
-            "description": "This is the beginning of my personal website journey"
+            "description": "This is the beginning of my personal website journey",
+            "category": "C#",
+            "tags": ["c#", "asp.net core"]
          },
          {
             "path": "2020/02/13/Start_of_Development",
             "title": "Start of Development",
-            "description": "This is the beginning of my personal website journey"
+            "description": "This is the beginning of my personal website journey",
+            "category": "C#",
+            "tags": [ "markdown", "asp.net core" ]
          }
       ]
    }
