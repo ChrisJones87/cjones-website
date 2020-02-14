@@ -4,12 +4,28 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Website.Configuration;
 
 namespace Website.Pages.Blog
 {
+   public static class StringExtensions
+   {
+      public static string MakeUiFriendly(this string value)
+      {
+         if (value == null)
+            return null;
+
+         var valueWithSpaces = value.Replace("-", " ");
+
+         var textInfo = CultureInfo.CurrentUICulture.TextInfo;
+
+         return textInfo.ToTitleCase(valueWithSpaces);
+      }
+   }
+
    public class IndexModel : PageModel
    {
       private readonly IWebHostEnvironment _environment;

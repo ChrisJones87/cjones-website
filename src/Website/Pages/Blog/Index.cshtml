@@ -16,13 +16,13 @@
       </div>
    </div>
    <div class="row">
-      <div class="col-3 mt-4">
+      <div class="col-2 mt-4">
          <h4 class="text-black-50">Category</h4>
          <ul class="list-unstyled">
             @foreach (var category in Model.Categories)
             {
                <li>
-                  <a href="/blog?category=@category">@category</a>
+                  <a href="/blog?category=@Html.Encode(category)">@category.MakeUiFriendly()</a>
                </li>
             }
          </ul>
@@ -32,12 +32,12 @@
             @foreach (var tag in Model.Tags)
             {
                <li>
-                  <a href="/blog?tag=@tag">@tag</a>
+                  <a href="/blog?tag=@Html.Encode(tag)">@tag.MakeUiFriendly()</a>
                </li>
             }
          </ul>
       </div>
-      <div class="col-9">
+      <div class="col-10">
          @foreach (var post in Model.BlogPosts)
          {
             <article class="mt-4">
