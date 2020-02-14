@@ -1,7 +1,36 @@
-﻿@page "/Blog/Post/{year:int}/{month:int}/{postName}"
-@model Website.Pages.Blog.PostModel
+﻿@page
+@using Website.Configuration
+@model Website.Pages.Blog.IndexModel
 @{
-    ViewData["Title"] = @Model.PostTitle;
+    ViewData["Title"] = "Blog";
+
+   string GeneratePostUrl(BlogPostMetadata post)
+   {
+      return $"/blog/post/{post.Path}";
+   }
 }
 
-<markdown text="@Model.PostText"></markdown>
+<div class="container">
+   <div class="row">
+      <div class="col">
+         <h1 class="display-4 mb-4 text-center">Development Blog</h1>
+         <h4 class="text-black-50">
+            Welcome to my personal development blog,
+            as you've stumbled upon this place i hope it helps you solve a problem, learn something new or just generally interests you.
+         </h4>
+      </div>
+   </div>
+   <div class="row">
+      <div class="col">
+         @foreach (var post in Model.BlogPosts)
+         {
+            var url = GeneratePostUrl(post);
+            
+            <article class="mt-4">
+               <h3><a href="@url">@post.Title</a></h3>
+               <p>@post.Description</p>
+            </article>
+         }
+      </div>
+   </div>
+</div>

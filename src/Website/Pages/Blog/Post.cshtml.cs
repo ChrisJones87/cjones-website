@@ -30,11 +30,11 @@ namespace Website.Pages.Blog
          return $"{year:D4}-{year:D2} - {name}";
       }
 
-      public async Task<IActionResult> OnGetAsync(int year, int month, string postName)
+      public async Task<IActionResult> OnGetAsync(int year, int month, int day, string postName)
       {
          try
          {
-            var filename = $"posts/{year:D4}/{month:D2}/{postName}.md";
+            var filename = $"posts/{year:D4}/{month:D2}/{day:D2}/{postName}.md";
             var file = _environment.WebRootFileProvider.GetFileInfo(filename);
 
             if (!file.Exists)

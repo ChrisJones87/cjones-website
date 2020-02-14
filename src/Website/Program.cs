@@ -17,10 +17,11 @@ namespace Website
       }
 
       public static IHostBuilder CreateHostBuilder(string[] args) =>
-          Host.CreateDefaultBuilder(args)
-              .ConfigureWebHostDefaults(webBuilder =>
-              {
-                 webBuilder.UseStartup<Startup>();
-              });
+         Host.CreateDefaultBuilder(args)
+             .ConfigureAppConfiguration(config =>
+             {
+                config.AddJsonFile("blog.json", optional: false, reloadOnChange: true);
+             })
+             .ConfigureWebHostDefaults(webBuilder => { webBuilder.UseStartup<Startup>(); });
    }
 }
