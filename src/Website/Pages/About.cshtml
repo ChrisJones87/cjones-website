@@ -3,51 +3,100 @@
 @{
 }
 
-<div class="container">
-   <div class="row section-1">
+<div class="container-fluid">
+   <div class="row section-1 py-4">
       <div class="col">
-         <h1 class="text-uppercase">Profile</h1>
-         <p>
-            Experienced and highly motivated software developer with a background in enterprise retail point-of-sale software
-            as well as labelling in the food industry.
-            I have been involved with all aspects of the software development lifecycle and worked in an agile environment with Scrum and Kanban.
-            Over the last 4 years I've taken a product from the very early stages to public launch including building infrastructure,
-            CI build pipelines, back-end services, REST API's and UI.
-         </p>
+         <div class="container">
+            <h1 class="text-uppercase text-center">Profile</h1>
+            <p>
+               Experienced and highly motivated software developer with a background in enterprise retail point-of-sale software
+               as well as labelling in the food industry.
+               I have been involved with all aspects of the software development lifecycle and worked in an agile environment with Scrum and Kanban.
+               Over the last 4 years I've taken a product from the very early stages to public launch including building infrastructure,
+               CI build pipelines, back-end services, REST API's and UI.
+            </p>
+         </div>
+      </div>
+   </div>
+   <div class="row section-1 pt-4">
+      <div class="col">
+         <div class="container">
+            <h1 class="text-uppercase text-center">Experience</h1>
+         </div>
+      </div>
+   </div>
+   <div class="row section-2 py-4">
+      <div class="col">
+         <div class="container">
+            <h2>Senior Software Developer - Wessex Labels</h2>
+            <h3 class="text-black-50">March 2016 - Present</h3>
+            <ul>
+               <li>
+                  Worked closely with the development manager to take a very early stage proof of concept B2B software for managing food products, visually designing food packaging labels and printing them to public launch.
+               </li>
+               <li>
+                  Designed and built a website portal for use by administrators, distributors and customers to manage customer accounts and software licencing including viewing of diagnostic log files and label printing activity reports.
+               </li>
+               <li>
+                  Integrated the account management and licencing with the third-party service Chargebee for handling billing and subscriptions.
+               </li>
+               <li>
+                  Designed and fully implemented a visual, extensible, drag-and-drop editor for rapidly creating and printing custom labels that pull all data from the database. The editor can show an accurate live preview with real product data, nutritional information, custom front-of-pack GDAs, images and barcodes.
+               </li>
+               <li>
+                  Set up and managed multiple continuous integration build pipelines using TeamCity. Software components are built and unit tested on each code check-in. Nightly Integration tests are run against the server API and installers are pushed to a UI automation testing system whose results are aggregated into TeamCity.
+               </li>
+               <li>
+                  Built the core framework underlying the windows service that hosts the REST API using NancyFx including login and JWT authentication.
+               </li>
+               <li>
+                  Created a custom branded WPF theme for Telerik controls.
+               </li>
+               <li>
+                  Mentored multiple new developers to help them learn the software, to learn skills needed for the project including helping our web designer with JavaScript and React and our software developer with C#, WPF, .NET Framework and WiX installers.
+               </li>
+            </ul>
+         </div>
       </div>
    </div>
 
-   <div class="row section-2">
+   <div class="row section-1 py-4">
       <div class="col">
-         <h1 class="text-uppercase">Experience</h1>
-         <h2>Senior Software Developer - Wessex Labels</h2>
-         <h3 class="text-black-50">March 2016 - Present</h3>
-         <ul>
-            <li>
-               Worked closely with the development manager to take a very early stage proof of concept B2B software for managing food products, visually designing food packaging labels and printing them to public launch.
-            </li>
-            <li>
-               Designed and built a website portal for use by administrators, distributors and customers to manage customer accounts and software licencing including viewing of diagnostic log files and label printing activity reports.
-            </li>
-            <li>
-               Integrated the account management and licencing with the third-party service Chargebee for handling billing and subscriptions.
-            </li>
-            <li>
-               Designed and fully implemented a visual, extensible, dragand-drop editor for rapidly creating and printing custom labels that pull all data from the database. The editor can show an accurate live preview with real product data, nutritional information, custom front-of-pack GDAs, images and barcodes.
-            </li>
-            <li>
-               Set up and managed multiple continuous integration build pipelines using TeamCity. Software components are built and unit tested on each code check-in. Nightly Integration tests are run against the server API and installers are pushed to a UI automation testing system whose results are aggregated into TeamCity.
-            </li>
-            <li>
-               Built the core framework underlying the windows service that hosts the REST API using NancyFx including login and JWT authentication.
-            </li>
-            <li>
-               Created a custom branded WPF theme for Telerik controls.
-            </li>
-            <li>
-               Mentored multiple new developers to help them learn the software, to learn skills needed for the project including helping our web designer with JavaScript and React and our software developer with C#, WPF, .NET Framework and WiX installers.
-            </li>
-         </ul>
+         <div class="container">
+            <h2>Software Developer - Omnico Group</h2>
+            <h3 class="text-black-50">November 2009 - March 2016</h3>
+            <ul>
+               <li>Rose from graduate software developer to senior software developer in an enterprise retail point-of-sale software company. </li>
+               <li> Given high level customer requirements, produced detailed design documents, implemented and tested new functionality to strict project deadlines for delivery to QA and customer roll-out. </li>
+               <li> Managed multiple development projects from estimating work and meeting deadlines given by the project manager delegating tasks to other team members. </li>
+               <li> Lead and mentored new graduate developers including helping them with C#, .NET Framework, WPF, C++, Visual Studio and helping them to debug problem that they had. </li>
+               <li> Integrated multiple point of sale hardware devices including Fiscal Printers and Card Payment devices. </li>
+               <li> Made significant improvements to promotion campaigns software to allow simple creation and management of promotions across a range of stores.</li>
+            </ul>
+         </div>
+      </div>
+   </div>
+
+
+   <div class="row section-1 pt-4">
+      <div class="col">
+         <div class="container">
+            <h1 class="text-uppercase text-center">Education</h1>
+         </div>
+      </div>
+   </div>
+
+   <div class="row section-2 py-4">
+      <div class="col">
+         <div class="container">
+            <h2>MEng Computer Engineering (2.1 Merit) - University of Portsmouth</h2>
+            <h3 class="text-black-50">2005 - 2009</h3>
+            <ul>
+               <li> Subjects covered programming (C, Java, Haskell), microcontroller programming (assembly, micro C), electronics, networking, security artificial intelligence and game theory.  </li>
+               <li> Final year project involved creating a set of programming libraries to allow inexperienced programmers to create simple 3D games easily in C++, C# or VB.NET. </li>
+               <li> Project leader for several successful group projects such as creating distributed file sharing software, a weather station and several small games.</li>
+            </ul>
+         </div>
       </div>
    </div>
 </div>
