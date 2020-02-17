@@ -84,3 +84,11 @@ body {
    background-size: 100%;
    background-repeat: no-repeat;
 }
+
+.section-1 {
+   background-color: white;
+}
+
+.section-2 {
+   background-color: lightgray;
+}
