@@ -41,8 +41,14 @@
          @foreach (var post in Model.BlogPosts)
          {
             <article class="mt-4">
-               <h3><a href="@post.PostUrl">@post.Title</a></h3>
-               <p>@post.Description</p>
+               @if (post.HasImage)
+               {
+                  <a href="@post.PostUrl" class="mb-2">
+                     <div class="w-100; blog-post-image" style="background-image: url('@post.ImageUrl');"></div>
+                  </a>
+               }
+               <h3 class=""><a href="@post.PostUrl">@post.Title</a></h3>
+               <p class="mt-2">@post.Description</p>
             </article>
          }
       </div>

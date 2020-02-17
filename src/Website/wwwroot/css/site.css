@@ -78,3 +78,9 @@ body {
 .profile-image {
    height: 5rem;
 }
+
+.blog-post-image {
+   height: 200px;
+   background-size: 100%;
+   background-repeat: no-repeat;
+}
