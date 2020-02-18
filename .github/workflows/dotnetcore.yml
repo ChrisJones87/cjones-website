@@ -18,3 +18,9 @@ jobs:
         dotnet-version: 3.1.100
     - name: Publish with dotnet
       run: dotnet build --configuration Release
+    
+    - name: 'Run Azure webapp deploy action using publish profile credentials'
+      uses: azure/webapps-deploy@v1
+      with: 
+        app-name: cjonesuk
+        publish-profile: ${{ secrets.azureWebAppPublishProfile }}
