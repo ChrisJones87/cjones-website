@@ -2,8 +2,12 @@ name: cjones.uk
 
 on: 
   push:
-   branches:
-    - master
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
 
 env:
   AZURE_WEBAPP_NAME: cjonesuk    # set this to your application's name
