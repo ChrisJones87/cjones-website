@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Markdig;
 using Microsoft.AspNetCore.Razor.Runtime.TagHelpers;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
@@ -28,9 +29,11 @@ namespace Website.Middleware.Markdown.TagHelpers
 
       public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
       {
+         var pipeline = new MarkdownPipelineBuilder().UseAdvancedExtensions().Build();
+
          var markdownText = await GetMarkdownTextAsync(output);
 
-         var html = Markdig.Markdown.ToHtml(markdownText ?? "");
+         var html = Markdig.Markdown.ToHtml(markdownText ?? "", pipeline);
 
          output.Content.SetHtmlContent(html);
       }

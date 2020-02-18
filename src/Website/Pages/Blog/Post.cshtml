@@ -1,7 +1,17 @@
 ﻿@page "/Blog/Post/{year:int}/{month:int}/{day:int}/{postName}"
 @model Website.Pages.Blog.PostModel
 @{
-    ViewData["Title"] = @Model.PostTitle;
+   ViewData["Title"] = @Model.PostTitle;
 }
 
-<markdown text="@Model.PostText"></markdown>
+<div class="container">
+   <markdown text="@Model.PostText"></markdown>
+</div>
+
+@section Scripts {
+   <link rel="stylesheet"
+         href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/default.min.css">
+   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+
+   <script>hljs.initHighlightingOnLoad();</script>
+}
