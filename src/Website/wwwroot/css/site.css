@@ -8,6 +8,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  font-size:1.1rem;
 }
 
 .footer {
@@ -34,9 +35,9 @@ body {
 }
 
 .section-1 {
-   background-color: white;
+   
 }
 
 .section-2 {
-   background-color: lightgray;
+   background-color: #1e2b37;
 }

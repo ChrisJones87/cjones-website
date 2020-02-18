@@ -4,17 +4,25 @@ $font-family-base: Muli;
 @import url(https://fonts.googleapis.com/css?family=Oswald:200,300,400,700);
 $headings-font-family: Oswald;
 
-/*@import "../lib/bootstrap/scss/_functions.scss";
-@import "../lib/bootstrap/scss/_variables.scss";*/
+@import "../lib/bootstrap/scss/_functions.scss";
+@import "../lib/bootstrap/scss/_variables.scss";
 
-$primary: #2f3c48;
+$primary: #eceeef;
+//$primary: #2f3c48;
 $secondary: #6f7f8c;
 $success: #3e4d59;
 $danger: #cc330d;
 $info: #5c8f94;
 $warning: #6e9fa5;
-$light: #eceeec;
-$dark: #1e2b37;
+$light: #e8e8e8;
+//$light: #eceeec;
+$dark: #151e27;
+//$dark: #1e2b37;
+
+$theme-colors: ( "primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark);
+
+$link-color: theme-color("primary");
+$link-hover-color: lighten($link-color, 15%);
 
 @import "../lib/bootstrap/scss/bootstrap";
 
