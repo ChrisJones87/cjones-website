@@ -5,7 +5,6 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>@ViewData["Title"]- C JONES</title>
    <link rel="stylesheet" href="~/css/theme.min.css" />
-   <link rel="stylesheet" href="~/css/site.css" />
    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
@@ -61,15 +60,15 @@
    </header>
    
    <main role="main" class="p-0 bg-dark text-light">
-      <div class="container-fluid pb-3">
+      <div class="container-fluid">
          @RenderBody()
       </div>
    </main>
    
 
-   <footer class="border-top footer text-muted bg-dark text-light">
+   <footer class="footer text-muted bg-dark text-light">
       <div class="container">
-         &copy; 2020 - Christopher Jones
+         <p class="text-center">&copy; 2020 - Christopher Jones</p>
       </div>
    </footer>
 

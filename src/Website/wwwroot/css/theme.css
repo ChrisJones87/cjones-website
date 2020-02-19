@@ -7192,3 +7192,39 @@ a.text-dark:hover, a.text-dark:focus {
   .table .thead-dark th {
     color: inherit;
     border-color: #dee2e6; } }
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+  background-color: #151e27; }
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+  font-size: 1.1rem; }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px;
+  /* Vertically center the text there */ }
+
+/* Custom
+-------------------------------------------------- */
+.profile-image {
+  height: 5rem; }
+
+.blog-post-image {
+  height: 200px;
+  background-size: 100%;
+  background-repeat: no-repeat; }
+
+.section-full {
+  height: calc(100vh - 110px - 60px); }
+
+.section-2 {
+  background-color: #1e2b37; }

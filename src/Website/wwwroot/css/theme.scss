@@ -27,3 +27,55 @@ $link-hover-color: lighten($link-color, 15%);
 @import "../lib/bootstrap/scss/bootstrap";
 
 // Add SASS theme customizations here..
+
+$header-height: 110px;
+$footer-height: 60px;
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+   position: relative;
+   min-height: 100%;
+   background-color: $dark
+}
+
+body {
+   /* Margin bottom by footer height */
+   margin-bottom: 60px;
+   font-size: 1.1rem;
+}
+
+.footer {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   white-space: nowrap;
+   line-height: $footer-height; /* Vertically center the text there */
+}
+
+
+
+/* Custom
+-------------------------------------------------- */
+
+.profile-image {
+   height: 5rem;
+}
+
+.blog-post-image {
+   height: 200px;
+   background-size: 100%;
+   background-repeat: no-repeat;
+}
+
+.section-full {
+   height: calc(100vh - #{$header-height} - #{$footer-height})
+}
+
+.section-1 {
+}
+
+.section-2 {
+   background-color: #1e2b37;
+}
