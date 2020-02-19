@@ -5,7 +5,6 @@ on:
     branches:
       - master
 
-
 env:
   AZURE_WEBAPP_NAME: cjonesuk    # set this to your application's name
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # set this to the path to your web app project, defaults to the repository root
@@ -18,11 +17,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: ${{ env.DOTNET_VERSION }}
-    - name: Publish with dotnet
+
+    - name: Build and Publish with dotnet
       run: |
         dotnet build --configuration Release
         dotnet publish -c Release -o myapp
