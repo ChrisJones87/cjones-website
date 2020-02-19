@@ -7198,7 +7198,8 @@ a.text-dark:hover, a.text-dark:focus {
 html {
   position: relative;
   min-height: 100%;
-  background-color: #151e27; }
+  background-color: #151e27;
+  scroll-behavior: 'smooth'; }
 
 body {
   /* Margin bottom by footer height */

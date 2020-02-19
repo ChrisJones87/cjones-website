@@ -37,7 +37,8 @@ $footer-height: 60px;
 html {
    position: relative;
    min-height: 100%;
-   background-color: $dark
+   background-color: $dark;
+   scroll-behavior: 'smooth';
 }
 
 body {

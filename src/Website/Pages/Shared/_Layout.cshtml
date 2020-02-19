@@ -64,7 +64,6 @@
          @RenderBody()
       </div>
    </main>
-   
 
    <footer class="footer text-muted bg-dark text-light">
       <div class="container">
@@ -78,14 +77,43 @@
 
    <!-- Global site tag (gtag.js) - Google Analytics -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158539180-1"></script>
-   <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag('js', new Date());
+<script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag() { dataLayer.push(arguments); }
+   gtag('js', new Date());
 
-      gtag('config', 'UA-158539180-1');
-   </script>
+   gtag('config', 'UA-158539180-1');
+</script>
 
-   @RenderSection("Scripts", required: false)
+<script>
+   // Select all links with hashes
+   $('a[href*="#"]')
+      // Remove links that don't actually link to anything
+      .not('[href="#"]')
+      .not('[href="#0"]')
+      .click(function(event) {
+         // On-page links
+         if (
+            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+               && 
+               location.hostname == this.hostname
+         ) {
+            // Figure out element to scroll to
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            // Does a scroll target exist?
+            if (target.length) {
+               // Only prevent default if animation is actually gonna happen
+               event.preventDefault();
+               $('html, body').animate({
+                  scrollTop: target.offset().top
+               }, 1000, function() {
+               });
+            }
+         }
+      });
+</script>
+
+@RenderSection("Scripts", required: false)
 </body>
 </html>
