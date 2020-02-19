@@ -28,6 +28,8 @@ $link-hover-color: lighten($link-color, 15%);
 
 // Add SASS theme customizations here..
 
+$footer-color:darken($dark, 15%);
+
 $header-height: 110px;
 $footer-height: 60px;
 
@@ -38,7 +40,6 @@ html {
    position: relative;
    min-height: 100%;
    background-color: $dark;
-   scroll-behavior: 'smooth';
 }
 
 body {
@@ -53,6 +54,7 @@ body {
    width: 100%;
    white-space: nowrap;
    line-height: $footer-height; /* Vertically center the text there */
+   background-color:$footer-color !important;
 }
 
 
@@ -71,7 +73,7 @@ body {
 }
 
 .section-full {
-   height: calc(100vh - #{$header-height} - #{$footer-height})
+   min-height: calc(100vh - #{$header-height})
 }
 
 .section-1 {

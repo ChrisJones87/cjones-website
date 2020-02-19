@@ -7198,8 +7198,7 @@ a.text-dark:hover, a.text-dark:focus {
 html {
   position: relative;
   min-height: 100%;
-  background-color: #151e27;
-  scroll-behavior: 'smooth'; }
+  background-color: #151e27; }
 
 body {
   /* Margin bottom by footer height */
@@ -7212,7 +7211,8 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
-  /* Vertically center the text there */ }
+  /* Vertically center the text there */
+  background-color: black !important; }
 
 /* Custom
 -------------------------------------------------- */
@@ -7225,7 +7225,7 @@ body {
   background-repeat: no-repeat; }
 
 .section-full {
-  height: calc(100vh - 110px - 60px); }
+  min-height: calc(100vh - 110px); }
 
 .section-2 {
   background-color: #1e2b37; }

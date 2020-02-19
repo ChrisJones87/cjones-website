@@ -58,16 +58,35 @@
          </div>
       </nav>
    </header>
-   
+
    <main role="main" class="p-0 bg-dark text-light">
       <div class="container-fluid">
          @RenderBody()
       </div>
    </main>
 
-   <footer class="footer text-muted bg-dark text-light">
+   <footer class="footer text-muted bg-dark text-light py-4">
       <div class="container">
-         <p class="text-center">&copy; 2020 - Christopher Jones</p>
+         <div class="row">
+            <div class="col-6 text-center">
+               <h3>Menu</h3>
+               <ul class="list-unstyled">
+                  <li><a asp-page="/Index">Home</a></li>
+                  <li><a asp-page="/About">About</a></li>
+                  <li><a asp-page="/Blog/Index">Blog</a></li>
+               </ul>
+            </div>
+
+            <div class="col-6 text-center">
+               <h3>Online</h3>
+               <ul class="list-unstyled">
+                  <li><a href="https://github.com/chrisjones87">GitHub</a></li>
+                  <li><a href="https://www.linkedin.com/in/chrisjones170187/">LinkedIn</a></li>
+                  <li><a href="https://twitter.com/chrisjones_87/">Twitter</a></li>
+               </ul>
+            </div>
+         </div>
+         <p class="text-center pb-0 mb-0">&copy; 2020 - Christopher Jones</p>
       </div>
    </footer>
 
@@ -77,43 +96,43 @@
 
    <!-- Global site tag (gtag.js) - Google Analytics -->
    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158539180-1"></script>
-<script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag() { dataLayer.push(arguments); }
-   gtag('js', new Date());
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
 
-   gtag('config', 'UA-158539180-1');
-</script>
+      gtag('config', 'UA-158539180-1');
+   </script>
 
-<script>
-   // Select all links with hashes
-   $('a[href*="#"]')
-      // Remove links that don't actually link to anything
-      .not('[href="#"]')
-      .not('[href="#0"]')
-      .click(function(event) {
-         // On-page links
-         if (
-            location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-               && 
+   <script>
+      // Select all links with hashes
+      $('a[href*="#"]')
+         // Remove links that don't actually link to anything
+         .not('[href="#"]')
+         .not('[href="#0"]')
+         .click(function (event) {
+            // On-page links
+            if (
+               location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+               &&
                location.hostname == this.hostname
-         ) {
-            // Figure out element to scroll to
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-            // Does a scroll target exist?
-            if (target.length) {
-               // Only prevent default if animation is actually gonna happen
-               event.preventDefault();
-               $('html, body').animate({
-                  scrollTop: target.offset().top
-               }, 1000, function() {
-               });
+            ) {
+               // Figure out element to scroll to
+               var target = $(this.hash);
+               target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+               // Does a scroll target exist?
+               if (target.length) {
+                  // Only prevent default if animation is actually gonna happen
+                  event.preventDefault();
+                  $('html, body').animate({
+                     scrollTop: target.offset().top
+                  }, 1000, function () {
+                  });
+               }
             }
-         }
-      });
-</script>
+         });
+   </script>
 
-@RenderSection("Scripts", required: false)
+   @RenderSection("Scripts", required: false)
 </body>
 </html>
