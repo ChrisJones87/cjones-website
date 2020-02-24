@@ -31,7 +31,6 @@ $link-hover-color: lighten($link-color, 15%);
 $footer-color:darken($dark, 15%);
 
 $header-height: 110px;
-$footer-height: 60px;
 
 
 /* Sticky footer styles
@@ -43,17 +42,13 @@ html {
 }
 
 body {
-   /* Margin bottom by footer height */
-   margin-bottom: 60px;
    font-size: 1.1rem;
 }
 
 .footer {
-   position: absolute;
-   bottom: 0;
    width: 100%;
    white-space: nowrap;
-   line-height: $footer-height; /* Vertically center the text there */
+   line-height:2rem;
    background-color:$footer-color !important;
 }
 
