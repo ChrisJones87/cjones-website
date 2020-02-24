@@ -2,37 +2,37 @@
    "Blog" : {
       "Posts": [
          {
-            "path": "2020/02/13/Start_of_Development",
-            "title": "The End?",
-            "description": "All done, nothing else to do.",
-            "imageName": "1.jpg",
+            "path": "2020/02/24/Personal_Website",
+            "title": "Personal Website",
+            "description": "The start of my own personal website and blog.",
+            "imageName": "stock-website.jpg",
             "category": "general",
-            "tags": []
-         },
-         {
-            "path": "2020/02/13/Start_of_Development",
-            "title": "C# 8 Language Features",
-            "description": "Let's take a look at the new features available in C# 8",
-            "imageName": "1.jpg",
-            "category": "c-sharp",
-            "tags": [ "c-sharp" ]
-         },
-         {
-            "path": "2020/02/13/Start_of_Development",
-            "title": "ASP.NET Core Resources",
-            "description": "This is the beginning of my personal website journey",
-            "imageName": "1.jpg",
-            "category": "aspnet-core",
-            "tags": [ "aspnet-core" ]
-         },
-         {
-            "path": "2020/02/13/Start_of_Development",
-            "title": "Start of Development",
-            "description": "This is the beginning of my personal website journey",
-            "imageName": "1.jpg",
-            "category": "general",
-            "tags": []
+            "tags": ["website", "general"]
          }
+         //{
+         //   "path": "2020/02/13/Start_of_Development",
+         //   "title": "C# 8 Language Features",
+         //   "description": "Let's take a look at the new features available in C# 8",
+         //   "imageName": "1.jpg",
+         //   "category": "c-sharp",
+         //   "tags": [ "c-sharp" ]
+         //},
+         //{
+         //   "path": "2020/02/13/Start_of_Development",
+         //   "title": "ASP.NET Core Resources",
+         //   "description": "This is the beginning of my personal website journey",
+         //   "imageName": "1.jpg",
+         //   "category": "aspnet-core",
+         //   "tags": [ "aspnet-core" ]
+         //},
+         //{
+         //   "path": "2020/02/13/Start_of_Development",
+         //   "title": "Start of Development",
+         //   "description": "This is the beginning of my personal website journey",
+         //   "imageName": "1.jpg",
+         //   "category": "general",
+         //   "tags": []
+         //}
       ]
    }
 }

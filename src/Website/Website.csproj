@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <None Include="compilerconfig.json" />
-    <None Include="wwwroot\posts\2020\02\13\Start_of_Development.md" />
+    <None Include="wwwroot\posts\2020\02\24\Personal_Website.md" />
   </ItemGroup>
 
   <ItemGroup>

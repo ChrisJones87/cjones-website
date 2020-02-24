@@ -5,12 +5,40 @@
    ViewData["Title"] = "Home page";
 }
 
-<div class="row" style="height:400px;">
+<div id="welcome" class="row section-full">
    <div class="container d-flex">
       <div class="text-center my-auto w-100">
          <h1 class="display-1">Welcome</h1>
-         <h3>Welcome to my personal development website and blog.</h3>
+         <h3 class="display-4 my-4">to my personal development website and blog.</h3>
+         
+         <a class="my-4" href="#profile"><i class="fas fa-chevron-down fa-lg"></i></a>
       </div>
+   </div>
+</div>
 
-   </div>   
+<div id="profile" class="row section-full">
+   <div class="container d-flex">
+      <div class="text-center my-auto w-100">
+         <h1 class="display-1">About Me</h1>
+         <h3 class="display-4 my-4">
+            Software developer with over 10 years of commercial experience in all things software from
+            desktop to web to cloud.
+         </h3>
+         <h3 class="my-4"><a asp-page="/About">See my detailed profile, skills and experience</a></h3>
+         <a href="#thiswebsite"><i class="fas fa-chevron-down fa-lg"></i></a>
+      </div>
+   </div>
+</div>
+
+
+<div id="thiswebsite" class="row section-full">
+   <div class="container d-flex">
+      <div class="text-center my-auto w-100">
+         <h1 class="display-1">About This Website</h1>
+         <h3 class="my-4">
+            Coming Soon: How has this site been designed and implemented?
+         </h3>
+         <a href="#welcome"><i class="fas fa-level-up-alt fa-lg"></i></a>
+      </div>
+   </div>
 </div>
