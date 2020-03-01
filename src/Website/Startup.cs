@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Website.Configuration;
 using Website.Middleware;
+using Website.Pages.Blog;
+using Website.Repositories;
 
 namespace Website
 {
@@ -29,6 +31,8 @@ namespace Website
 
          var blogConfiguration = Configuration.GetSection("Blog");
          services.Configure<BlogConfiguration>(blogConfiguration);
+
+         services.AddScoped<IBlogRepository, BlogRepository>();
       }
 
       // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

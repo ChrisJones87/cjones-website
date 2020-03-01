@@ -2,69 +2,36 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
 using System.Threading.Tasks;
 using Website.Configuration;
+using Website.Repositories;
 
 namespace Website.Pages.Blog
 {
-   public static class StringExtensions
-   {
-      public static string MakeUiFriendly(this string value)
-      {
-         if (value == null)
-            return null;
-
-         var valueWithSpaces = value.Replace("-", " ");
-
-         var textInfo = CultureInfo.CurrentUICulture.TextInfo;
-
-         return textInfo.ToTitleCase(valueWithSpaces);
-      }
-   }
-
    public class IndexModel : PageModel
    {
-      private readonly IWebHostEnvironment _environment;
       private readonly ILogger _logger;
-      private readonly BlogConfiguration _blogConfiguration;
-      private List<BlogPostMetadata> _blogPosts;
+      private readonly IBlogRepository _blogRepository;
 
-      public IndexModel(IWebHostEnvironment environment,
-                        ILogger<IndexModel> logger,
-                        IOptions<BlogConfiguration> blogConfigurationOptions)
+      public IndexModel(ILogger<IndexModel> logger,
+                        IBlogRepository blogRepository)
       {
-         _environment = environment;
          _logger = logger;
-         _blogConfiguration = blogConfigurationOptions.Value;
+         _blogRepository = blogRepository;
       }
 
-      public List<BlogPostMetadata> BlogPosts => _blogPosts;
+      public IReadOnlyList<BlogPostMetadata> BlogPosts { get; private set; }
 
-      public List<string> Categories { get; set; }
-      public List<string> Tags { get; set; }
+      public IReadOnlyList<string> Categories { get; set; }
+      public IReadOnlyList<string> Tags { get; set; }
 
       public async Task<IActionResult> OnGetAsync([FromQuery] string category, [FromQuery] string tag)
       {
-         Categories = _blogConfiguration.Posts.Where(x => !string.IsNullOrWhiteSpace(x.Category)).Select(x => x.Category).Distinct().ToList();
-         Tags = _blogConfiguration.Posts.Where(x => x.Tags != null).SelectMany(x => x.Tags).Distinct().ToList();
+         Categories = _blogRepository.GetCategories();
+         Tags = _blogRepository.GetTags();
 
-         var query = _blogConfiguration.Posts.AsQueryable();
-
-         if (!string.IsNullOrWhiteSpace(category))
-         {
-            query = query.Where(x => x.Category == category);
-         }
-
-         if (!string.IsNullOrWhiteSpace(tag))
-         {
-            query = query.Where(x => x.Tags.Contains(tag));
-         }
-
-         _blogPosts = query.ToList();
+         BlogPosts = await _blogRepository.SearchAsync(category, tag);
 
          return Page();
       }

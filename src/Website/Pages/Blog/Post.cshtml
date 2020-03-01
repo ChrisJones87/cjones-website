@@ -1,11 +1,11 @@
-﻿@page "/Blog/Post/{year:int}/{month:int}/{day:int}/{postName}"
+﻿@page "/Blog/Post/{*postName}"
 @model Website.Pages.Blog.PostModel
 @{
-   ViewData["Title"] = @Model.PostTitle;
+   ViewData["Title"] = @Model.Post.Title;
 }
 
 <div class="container">
-   <markdown text="@Model.PostText"></markdown>
+   <markdown text="@Model.Post.Content"></markdown>
 </div>
 
 @section Scripts {

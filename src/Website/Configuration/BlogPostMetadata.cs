@@ -1,9 +1,11 @@
-﻿using System;
-using System.Text.Json.Serialization;
+﻿using Microsoft.Extensions.FileProviders;
+using System;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace Website.Configuration
 {
-   public class BlogPostMetadata
+   public sealed class BlogPostMetadata
    {
       private string[] _tags;
 
@@ -28,5 +30,19 @@ namespace Website.Configuration
       public string ImageUrl => $"/images/media/{ImageName}";
 
       public bool HasImage => !string.IsNullOrEmpty(ImageName);
+
+      public async Task<string> ReadContentAsync(IFileProvider root)
+      {
+         var filename = $"posts/{Path}.md";
+         var file = root.GetFileInfo(filename);
+
+         if (!file.Exists)
+            return null;
+
+         await using var stream = file.CreateReadStream();
+         using var reader = new StreamReader(stream);
+
+         return await reader.ReadToEndAsync();
+      }
    }
 }

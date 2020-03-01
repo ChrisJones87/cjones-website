@@ -1,0 +1,14 @@
+{
+   "Blog" : {
+      "Drafts": [
+         {
+            "path": "drafts/JavaScript_for_CSharp_Developers",
+            "title": "Javascript for C# Developers",
+            "description": "",
+            "imageName": "stock-website.jpg",
+            "category": "javascript",
+            "tags": [ "javascript", "csharp" ]
+         }
+      ]
+   }
+}
