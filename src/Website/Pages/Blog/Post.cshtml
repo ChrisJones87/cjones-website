@@ -4,46 +4,50 @@
    ViewData["Title"] = @Model.Post.Title;
 }
 
-<div class="container">
-   <div class="row">
-      <div class="col-2 mt-4">
-         <h4 class="">Category</h4>
-         <ul class="list-unstyled">
-            @foreach (var category in Model.Categories)
-            {
-               <li>
-                  <a href="/blog?category=@Html.Encode(category)">@category.MakeUiFriendly()</a>
-               </li>
-            }
-         </ul>
-
-         <h4 class="mt-4">Tags</h4>
-         <ul class="list-unstyled">
-            @foreach (var tag in Model.Tags)
-            {
-               <li>
-                  <a href="/blog?tag=@Html.Encode(tag)">@tag.MakeUiFriendly()</a>
-               </li>
-            }
-         </ul>
+   <div class="container">
+      <div class="row">
+         <div class="col">
+            <h1 class="display-4 mb-4 text-center">@Model.Post.Title</h1>
+         </div>
       </div>
+      <div class="row">
+         <div class="col-2 mt-4">
+            <h4 class="">Category</h4>
+            <ul class="list-unstyled">
+               @foreach (var category in Model.Categories)
+               {
+                  <li>
+                     <a href="/blog?category=@Html.Encode(category)">@category.MakeUiFriendly()</a>
+                  </li>
+               }
+            </ul>
 
-      <div class="col-10">
-         <article class="mt-4">
-            @if (Model.Post.HasImage)
-            {
-               <div class="mb-2">
-                  <a href="@Model.Post.PostUrl">
-                     <div class="w-100; blog-post-image" style="background-image: url('@Model.Post.ImageUrl');"></div>
-                  </a>
-               </div>
-            }
-            <h1 class="display-4 text-center"><a href="@Model.Post.PostUrl">@Model.Post.Title</a></h1>
-            <markdown class="mt-4" text="@Model.Post.Content"></markdown>
-         </article>
+            <h4 class="mt-4">Tags</h4>
+            <ul class="list-unstyled">
+               @foreach (var tag in Model.Tags)
+               {
+                  <li>
+                     <a href="/blog?tag=@Html.Encode(tag)">@tag.MakeUiFriendly()</a>
+                  </li>
+               }
+            </ul>
+         </div>
+
+         <div class="col-10">
+            <article class="mt-4">
+               @if (Model.Post.HasImage)
+               {
+                  <div class="mb-2">
+                     <a href="@Model.Post.PostUrl">
+                        <div class="w-100; blog-post-image" style="background-image: url('@Model.Post.ImageUrl');"></div>
+                     </a>
+                  </div>
+               }
+               <markdown class="mt-4" text="@Model.Post.Content"></markdown>
+            </article>
+         </div>
       </div>
    </div>
-</div>
 
 @section Scripts {
    <link rel="stylesheet"
