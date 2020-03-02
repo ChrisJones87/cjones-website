@@ -17,7 +17,7 @@ $warning: #6e9fa5;
 $light: #e8e8e8;
 //$light: #eceeec;
 $dark: #10161d; // #151e27;
-$darker: #151e27;//#10161d;
+$dark-2: #151e27;//#10161d;
 
 $theme-colors: ( "primary": $primary, "secondary": $secondary, "success": $success, "info": $info, "warning": $warning, "danger": $danger, "light": $light, "dark": $dark);
 
@@ -75,5 +75,5 @@ body {
 }
 
 .section-2 {
-   background-color: $darker;
+   background-color: $dark-2;
 }
