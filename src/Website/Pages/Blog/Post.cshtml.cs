@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -24,12 +25,17 @@ namespace Website.Pages.Blog
 
       public PostViewModel Post { get; private set; }
 
+      public IReadOnlyList<string> Categories { get; set; }
+      public IReadOnlyList<string> Tags { get; set; }
+
       public async Task<IActionResult> OnGetAsync(string postName)
       {
          try
          {
-            var post = _blogRepository.Get(postName);
+            Categories = _blogRepository.GetCategories();
+            Tags = _blogRepository.GetTags();
 
+            var post = _blogRepository.Get(postName);
             Post = await PostViewModel.Load(post, _environment.WebRootFileProvider);
 
             return Page();

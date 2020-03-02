@@ -9,7 +9,7 @@ namespace Website.ViewModels
       private readonly BlogPostMetadata _post;
       private readonly string _content;
 
-      protected PostViewModel(BlogPostMetadata post, string content)
+      private PostViewModel(BlogPostMetadata post, string content)
       {
          _post = post;
          _content = content;
@@ -17,6 +17,10 @@ namespace Website.ViewModels
 
       public string Content => _content;
       public string Title => _post.Title;
+      public bool HasImage => _post.HasImage;
+      public string PostUrl => _post.PostUrl;
+
+      public string ImageUrl => _post.ImageUrl;
 
       public static async Task<PostViewModel> Load(BlogPostMetadata post, IFileProvider root)
       {
